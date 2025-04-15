@@ -1,0 +1,84 @@
+# PATH variables
+OPEN_SSL_BIN=/usr/local/opt/openssl/bin
+CURL_BIN=/usr/local/opt/curl/bin
+CURL_OPENSSL_BIN=/usr/local/opt/curl-openssl/bin
+
+BIN=$HOME/bin
+LOCAL_BIN=/usr/local/bin
+SBIN=/usr/local/sbin
+HOMEBREW_BIN=/opt/homebrew/bin
+
+TOOLS=$HOME/Tools
+
+export PATH=$BIN\
+:$LOCAL_BIN\
+:$SBIN\
+:$HOMEBREW_BIN\
+:$TOOLS\
+:$OPEN_SSL_BIN\
+:$CURL_BIN\
+:$CURL_OPENSSL_BIN\
+:$PATH
+
+
+# General variables
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export EDITOR=nvim
+
+# Path to your oh-my-zsh installation.
+export ZSH=~/.oh-my-zsh
+export ZSH_CUSTOM=~/.oh-my-zsh/custom
+# Plugins
+plugins=(
+    git
+    docker
+    fast-syntax-highlighting
+    zsh-autosuggestions
+    zsh-completions
+   # zsh-vi-mode
+    #tmux
+    fzf
+)
+
+
+export COMPLETION_WAITING_DOTS="true"
+export HIST_STAMPS="yyyy-mm-dd"
+
+function zvm_after_init() {
+    zvm_bindkey viins "^R" fzf-history-widget
+}
+
+
+# Additional imports
+[ -f ~/.api_keys ] && source ~/.api_keys
+[ -f ~/.completions ] && source ~/.completions
+[ -f ~/.aliases ] && source ~/.aliases
+
+export GITCONFIG_WORK=$HOME/.config/git/.gitconfig_work
+export GITCONFIG_PRIVATE=$HOME/.config/git/.gitconfig_private
+
+
+
+# For compilers to find zlib you may need to set:
+export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
+export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
+# For pkg-config to find zlib you may need to set:
+export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}/usr/local/opt/zlib/lib/pkgconfig
+
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+#eval "$(zoxide init --cmd cd zsh)"
+eval "$(/opt/homebrew/bin/mise activate zsh)"
+#
+# Set ZSH theme
+export ZSH_THEME=""
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+eval "$(starship init zsh)"
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+autoload -U compinit && compinit
+source $ZSH/oh-my-zsh.sh
+

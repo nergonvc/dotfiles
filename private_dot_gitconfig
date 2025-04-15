@@ -1,0 +1,12 @@
+[color]
+	diff = true
+	status = true
+	ui = true
+  interactive = true
+  branch = true
+[core]
+  autocrlf = input
+	editor = nvim
+[user]
+	email = vasilisnx@gmail.com
+	name = v.christopoulos
