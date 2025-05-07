@@ -6,3 +6,5 @@ vim.o.fileencoding = "utf-8"
 if vim.g.neovide then
   vim.o.guifont = "Pragmasevka Nerd Font:h11"
 end
+
+vim.cmd("colorscheme cyberdream")

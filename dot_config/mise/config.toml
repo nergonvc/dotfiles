@@ -1,8 +1,10 @@
 [tools]
-node = "22"
+node = "latest"
 python = "3.13.2"
 pnpm = "latest"
 uv = "latest"
+java = "openjdk-21"
+gradle = "latest"
 
 [settings]
 python.uv_venv_auto = true

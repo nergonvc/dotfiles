@@ -9,5 +9,6 @@ vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 vim.opt.title = true
 vim.opt.timeoutlen = 1000
 vim.opt.ttimeoutlen = 0
+vim.diagnostic.config({ virtual_lines = { current_line = true }, virtual_text = false })
 -- vim.o.tabstop = 4
 -- vim.o.shiftwidth = 4

@@ -24,7 +24,7 @@ return {
           },
           typescript = {
             tsserver = {
-              maxTsServerMemory = 16384,
+              maxTsServerMemory = 4096,
             },
           },
         },

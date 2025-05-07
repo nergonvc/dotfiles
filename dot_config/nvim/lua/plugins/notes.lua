@@ -1,10 +1,9 @@
-local base_path = vim.fn.expand("~/Documents/Obsidian Vault")
+local base_path = vim.fn.expand("~/Documents/vault/data")
 
-local dailies_path = base_path .. "/Fleeting Notes"
-local notes_path = base_path .. "/Fleeting Notes"
-local templates_path = base_path .. "/Templates"
+local dailies_path = base_path .. "/00_dailies"
+local templates_path = base_path .. "/05_templates"
 
-local images_dir = "Files"
+local images_dir = "04_files"
 
 return {
   {
@@ -43,7 +42,7 @@ return {
       image_subdir = images_dir,
       templates = templates_path,
       template_new_daily = templates_path .. "/daily.md",
-      template_new_note = templates_path .. "/Note Template.md",
+      template_new_note = templates_path .. "/note.md",
       journal_auto_open = true,
       auto_set_filepath = false,
       auto_set_filetype = false,

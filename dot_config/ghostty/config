@@ -1,6 +1,6 @@
 working-directory = "home"
 
-theme = "tokyonight_night"
+theme = cyberdream
 
 # TODO setup a font
 font-family = ""
@@ -11,7 +11,7 @@ font-style = "Regular"
 font-style-bold = "Bold"
 font-style-italic = "Medium Italic"
 font-style-bold-italic = "Bold Italic"
-font-size = 11
+font-size = 16
 
 # I want the cursor-color to be as bright and visible as possible
 cursor-color = "#03fc07"
